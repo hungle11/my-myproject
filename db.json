@@ -1,0 +1,90 @@
+{
+  "userAcc": [
+    {
+      "name": "Hungleee",
+      "pass": "123",
+      "id": 2
+    },
+    {
+      "name": "wooden sofa tess",
+      "pass": "123455677",
+      "email": "hung1@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "morden sofa135",
+      "pass": "13435456",
+      "email": "hung@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "pass": "123456",
+      "id": 6
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "id": 8
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "id": 9
+    }
+  ],
+  "product": [],
+  "project": [
+    {
+      "title": "Website Portfolio",
+      "description": "A portfolio website showcasing my projects and skills.",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "MongoDB"
+      ],
+      "image": "https://example.com/portfolio-image.jpg",
+      "repository": "https://github.com/hungle11/my-myproject",
+      "url": "https://my-myproject.vercel.app/",
+      "role": "Developer",
+      "id": 1
+    },
+    {
+      "title": "project test1",
+      "description": "testt",
+      "skill": "html ,css",
+      "image": "C:\\fakepath\\Ảnh chụp màn hình 2023-06-08 083117.png",
+      "repository": "https://github.com/hungle11/my-myproject",
+      "url": "https://my-myproject.vercel.app/",
+      "role": "Developer",
+      "id": 2
+    },
+    {
+      "title": "project ",
+      "description": "testt",
+      "skill": "[         \"HTML\",         \"CSS\",         \"JavaScript\",         \"MongoDB\"       ]",
+      "image": "C:\\fakepath\\Ảnh chụp màn hình 2023-06-07 205358.png",
+      "repository": "https://github.com/hungle11/my-myproject",
+      "url": "https://my-myproject.vercel.app/",
+      "role": "Developer",
+      "id": 3
+    },
+    {
+      "title": "project244",
+      "description": "testtw2",
+      "skill": "html , css ,js ,tailwind",
+      "image": "C:\\fakepath\\Ảnh chụp màn hình 2023-06-07 202452.png",
+      "repository": "https://github.com/hungle11/my-myproject",
+      "url": "https://my-myproject.vercel.app/",
+      "role": "Developer",
+      "id": 4
+    }
+  ]
+}

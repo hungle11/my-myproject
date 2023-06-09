@@ -8,6 +8,8 @@ export const body = () =>{
                 <h5 class="mb-3">A Web Designer / Developer Located In Our Lovely Earth</h5>
                 <p class="mt-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit.sit amet, Qui deserunt consequatur fugit repellendusillo voluptas?</p>
                 <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i>Download My CV</button>
+                <li  style="color: black"><a href="/sign_in" style= "color: black">Sign in</i></a></li>
+                <li ><a style= "color: black" href="/sign_up">Sign up</i></a></li>
             </div>
             <div class="col-lg-4 about-card">
                 <h3 class="font-weight-light">Personal Info</h3>

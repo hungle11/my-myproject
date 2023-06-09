@@ -4,11 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently vite \"json-server-auth --watch db.json\"",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^4.3.2"
+  },
+  "dependencies": {
+    "joi": "^17.9.2",
+    "navigo": "^8.11.1"
   }
 }
