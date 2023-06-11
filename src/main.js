@@ -7,10 +7,17 @@ import adminEditPage from "./pages/adminPageEdit";
 import { addProject } from "./pages/addProject";
 import adminProject from "./pages/adminproject";
 import EditProject from "./pages/ProjectEdit";
-
+import { addProduct } from "./pages/addproduct";
 import admin from "./pages/adminPage";
+import adminProduct from "./pages/adminProduct.JS";
+import EditProduct from "./pages/addProductEdit";
+
+
+
+
 
 const app = document.getElementById("app");
+
 
 
 
@@ -22,6 +29,11 @@ router.on("/product/:id/edit", ({ data }) => render(() => adminEditPage(data), a
 router.on("/addproject", () => render(addProject,app));
 router.on("/admin/project", () => render(adminProject,app));
 router.on("/project/:id/edit", ({ data }) => render(() => EditProject(data), app));
+router.on("/addproduct", () => render(addProduct,app));
+router.on("/admin/product", () => render(adminProduct,app));
+router.on("/pro/:id/edit", ({ data }) => render(() => EditProduct(data), app));
+
+
 
 
 

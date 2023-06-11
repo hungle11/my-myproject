@@ -39,7 +39,15 @@
       "id": 9
     }
   ],
-  "product": [],
+  "product": [
+    {
+      "name": "sp1",
+      "price": "1234232222",
+      "date": "2023-06-15",
+      "contend": "nnoi dung 1",
+      "id": 1
+    }
+  ],
   "project": [
     {
       "title": "Website Portfolio",
