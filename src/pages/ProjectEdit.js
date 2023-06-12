@@ -24,7 +24,7 @@ const EditProject = ({id})=>{
                 role: document.getElementById("role").value
             };
             
-            fetch(`http://localhost:3000/userAcc/${id}`, {
+            fetch(`http://localhost:3000/project/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

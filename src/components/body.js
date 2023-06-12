@@ -1,4 +1,13 @@
+import { useEffect, useState } from "../lib";
+
 export const body = () =>{
+    const [project, setProject] = useState([]); 
+    useEffect(() => {
+        fetch(`http://localhost:3000/project`)
+            .then((response) => response.json())
+            .then((data) => setProject(data));
+    }, []);
+    
     return `
     <div class="container-fluid">
         <div id="about" class="row about-section">
@@ -10,6 +19,7 @@ export const body = () =>{
                 <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i>Download My CV</button>
                 <li  style="color: black"><a href="/sign_in" style= "color: black">Sign in</i></a></li>
                 <li ><a style= "color: black" href="/sign_up">Sign up</i></a></li>
+                <li ><a style= "color: black" href="/adminmain">Admin</i></a></li>
             </div>
             <div class="col-lg-4 about-card">
                 <h3 class="font-weight-light">Personal Info</h3>
@@ -303,186 +313,26 @@ export const body = () =>{
             <h1 class="mb-5"><span class="text-danger">My</span> Portfolio</h1>
             <div class="portfolio">
                 <div class="filters">
-                    <a href="#" data-filter=".new" class="active">
-                        New
-                    </a>
-                    <a href="#" data-filter=".advertising">
-                        Advertising
-                    </a>
-                    <a href="#" data-filter=".branding">
-                        Branding
-                    </a>
+                   
                     <a href="#" data-filter=".web">
                         Web
                     </a>
                 </div>
-                <div class="portfolio-container"> 
-                    <div class="col-md-6 col-lg-4 web new">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/web-1.jpg" class="img-fluid" >
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/web-1.jpg"></a>
-                                <div class="text-holder">
-                                    <a href="#"><h6 class="title">WEB</h6></a>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totamhungkkd!</p>
-                                </div>
-                            </div>   
-                        </div>             
-                    </div>
-
-
-
-                    <div class="col-md-6 col-lg-4 web new">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/web-2.jpg" class="img-fluid" >
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/web-2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">WEB</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div> 
-                        </div>                         
-                    </div>
-
-
-                    <div class="col-md-6 col-lg-4 advertising new">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/advertising-2.jpg" class="img-fluid" >                         
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/advertising-2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">ADVERSTISING</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div>    
-                        </div>              
-                    </div> 
-
-
-                    
-                    <div class="col-md-6 col-lg-4 web">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/web-4.jpg" class="img-fluid" >
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/web-4.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">WEB</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
+                <div class="portfolio-container "> 
+                ${project.map((item)=>  {
+                    return `<div class="col-md-6 col-lg-4 web new">
+                    <div class="portfolio-item">
+                        <img src="${item.image}" class="img-fluid" >
+                        <div class="content-holder">
+                            <a class="img-popup" href="${item.image}"></a>
+                            <div class="text-holder">
+                                <a href="/detail/${item.id}"><h6 class="title">${item.title}</h6></a>
+                                <p class="subtitle">${item.repository}</p>
                             </div>
-                        </div>                                                     
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 advertising"> 
-                        <div class="portfolio-item">
-                            <img src="src/imgs/advertising-1.jpg" class="img-fluid" >                               
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/advertising-1.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">ADVERSITING</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div>
-                        </div>                                                       
-                    </div> 
-                    <div class="col-md-6 col-lg-4 web new">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/web-3.jpg" class="img-fluid" >  
-                           <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/web-3.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">WEB</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div>
-                        </div>                                                     
-                    </div>
-                    <div class="col-md-6 col-lg-4 advertising new">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/advertising-3.jpg" class="img-fluid" >       
-                           <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/advertising-3.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">ADVERSITING</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div>
-                        </div>                                                       
-                    </div> 
-                    <div class="col-md-6 col-lg-4 advertising new"> 
-                        <div class="portfolio-item">
-                            <img src="src/imgs/advertising-4.jpg" class="img-fluid" >            
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/advertising-4.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">ADVERTISING</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div>
-                        </div>
-                                
-                    </div> 
-                    <div class="col-md-6 col-lg-4 branding new">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/branding-1.jpg" class="img-fluid" >                        
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/branding-1.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">BRANDING</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> 
-                    <div class="col-md-6 col-lg-4 branding">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/branding-2.jpg" class="img-fluid" >  
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/branding-2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">BRANDING</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div>
-                        </div>                                                     
-                    </div> 
-                    <div class="col-md-6 col-lg-4 branding new">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/branding-3.jpg" class="img-fluid" >   
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/branding-3.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">BRANDING</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div>
-                        </div>                                                    
-                    </div> 
-                    <div class="col-md-6 col-lg-4 branding">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/branding-4.jpg" class="img-fluid" >                      
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/branding-4.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">BRANDING</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div>
-                        </div>                                                      
-                    </div> 
-                    <div class="col-md-6 col-lg-4 branding">
-                        <div class="portfolio-item">
-                            <img src="src/imgs/branding-5.jpg" class="img-fluid" >          
-                            <div class="content-holder">
-                                <a class="img-popup" href="src/imgs/branding-5.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">BRANDING</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div>
-                        </div>                                                   
-                    </div>
+                        </div>   
+                    </div>             
+                </div>`
+                }).join("")}
                 </div> 
             </div>  
         </div>            

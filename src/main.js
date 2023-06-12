@@ -11,7 +11,9 @@ import { addProduct } from "./pages/addproduct";
 import admin from "./pages/adminPage";
 import adminProduct from "./pages/adminProduct.JS";
 import EditProduct from "./pages/addProductEdit";
-
+import adminmain from "./pages/adminmain";
+import detail from "./pages/detail";
+import { body } from "./components/body";
 
 
 
@@ -32,6 +34,8 @@ router.on("/project/:id/edit", ({ data }) => render(() => EditProject(data), app
 router.on("/addproduct", () => render(addProduct,app));
 router.on("/admin/product", () => render(adminProduct,app));
 router.on("/pro/:id/edit", ({ data }) => render(() => EditProduct(data), app));
+router.on("/adminmain", () => render(adminmain,app));
+router.on("/detail/:id", () => render(detail,app));
 
 
 
